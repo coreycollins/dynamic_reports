@@ -32,14 +32,13 @@ if defined?(Rails)
   # Load all defined reports.
   # Question: How to get Rails to reload files other than ones matching the requested constant...
   #Dir.glob("#{File.join(Rails.root, "app", "reports")}/*.rb").each { |file| require file }
-  ActiveSupport::Dependencies.load_paths << File.join(Rails.root, "app", "reports")
+  #ActiveSupport::Dependencies.load_paths << File.join(Rails.root, "app", "reports")
   # Question: Should we allow for report directory nesting ?
 
   # Set default views directory
   # TODO: These should be added to Rails views directories?
   DynamicReports.default_view_paths += [
-    File.join(Rails.root, "app", "views", "reports"),
-    File.join(Rails.root, "app", "views", "layouts")
+    File.join(Rails.root, "app", "views", "reports")
   ]
 
   # TODO: Render extension
